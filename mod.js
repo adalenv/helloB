@@ -87,6 +87,20 @@
 					alert(errors.replace(/\. /g,'\n'));
 				});
 			},
+			home:function(){
+				console.log('test');
+				$('.signup-btn').on('click',function(event) {
+					
+					event.preventDefault();
+					
+					if(!(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test($('#user_email').val()))){
+				        alert('Please enter a valid email');
+				        $('#user_email').focus();
+				        return false;
+				     }
+				     window.location.href='signup?full_name='+$('#user_full_name').val()+'&email='+$('#user_email').val();
+				});
+			},
 			run:function() {
 			    var route=window.location.pathname.split("/");
 			    route=route[route.length-2];
@@ -97,14 +111,21 @@
 							event.preventDefault();
 							app.do.login($('#login-user-email').val(),$('#login-user-password').val());
 						});
-					break;
+						break;
 					case "signup":
 						app.do.getInfo();
+						var url= new URL(window.location.href);
+						if(url.searchParams.get('full_name')){
+							$('#user_full_name').val(url.searchParams.get('full_name'));
+						}
+						if(url.searchParams.get('email')){
+							$('#user_email').val(url.searchParams.get('email'));
+						}
 						$('.signup-btn').on('click',function(event) {
 							event.preventDefault();
 							app.do.registration();
 						});	
-					break;
+						break;
 					case "deposit":
 						if (!localStorage.getItem(app.config.localStorage)) {
 							app.do.goto("signin");
@@ -115,15 +136,15 @@
 							event.preventDefault();
 							app.do.logout();
 						});
-					break;
+						break;
 					case "settings":
 						$('.user-name').text(window.localStorage.getItem(app.config.localStorage));
-					break;
+						break;
 					case "":
 					case app.config.path:
 					case app.config.domain:
-						//app.do.main();
-					break;
+						app.do.home();
+						break;
 				}
 			},
 			goto:function(to){
