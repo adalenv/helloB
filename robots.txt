@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /preview/sample-invoice
+Disallow: /emoji-freelance
+Disallow: /best-freelance-websites/gigster-review
+Disallow: /best-freelance-websites/hired-review
+Disallow: /best-freelance-websites/crew-review
+Disallow: /best-freelance-websites/guru-review
+Disallow: /best-freelance-websites/freelancer-review
+Disallow: /best-freelance-websites/upwork-review
+Disallow: /best-freelance-websites/contently-review
+Disallow: /best-freelance-websites/localsolo-review
+Disallow: /best-freelance-websites/onsite-review
+Disallow: /best-freelance-websites/hireable-review
+Disallow: /best-freelance-websites/yunojuno-review
+Disallow: /best-freelance-websites/99designs-review
+Disallow: /best-freelance-websites/peopleperhour-review
+
+Sitemap: https://www.hellobonsai.com/sitemap.xml
+
