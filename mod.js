@@ -8,7 +8,14 @@
 				login 	: 'https://api.platinumstrade.com/account/logon',
 				logout 	: 'https://api.platinumstrade.com/account/logoff',
 				register: 'https://api.platinumstrade.com/Registration/Full',
-			},
+				},
+			// user:{
+			// 	name: 	$('#user_full_name').val(),
+			// 	phone: 	$('#user_phone_number').val(),
+			// 	email:  $('#user_email').val(),
+			// 	passw:  $('#user_password').val(),
+			// 	passw:  $('#user_password').val()
+			// }
 		},
 		do:{
 			getInfo:function(){
@@ -24,8 +31,8 @@
 					"url": app.config.ajax.login,
 					"method": "POST",
 					"data": {	
-								"email"    : email,
-								"password" : password
+							"email"    : email,
+							"password" : password
 							}
 				}).done(function (response,status,xhr) {
 					if (status="success") {
@@ -33,9 +40,11 @@
 						app.do.goto("deposit");
 					}
 				}).fail(function(response){
-					console.log(JSON.parse(response.responseText).message);
 					errors=JSON.parse(response.responseText).message;
-					alert(errors.replace(/\. /g,'\n'));
+					errors=errors.split('.');
+					for (var i = 0; i < errors.length-1; i++) {
+						toastr.error(errors[i]);
+					}
 					$('#login-user-password').val('');
 				});
 			},
@@ -79,19 +88,20 @@
 				})
 				.done(function(response) {
 					app.do.login($('#user_email').val(),$('#user_password').val());
-					//console.log(response);
 				})
 				.fail(function(response) {
-					console.log(JSON.parse(response.responseText).message);
 					errors=JSON.parse(response.responseText).message;
-					alert(errors.replace(/\. /g,'\n'));
+					errors=errors.split('.');
+					for (var i = 0; i < errors.length-1; i++) {
+						toastr.error(errors[i]);
+					}
 				});
 			},
 			home:function(){
 				$('.signup-btn').on('click',function(event) {
 					event.preventDefault();
 					if(!(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test($('#user_email').val()))){
-				        alert('Please enter a valid email');
+				        toastr.error('Please enter a valid email');
 				        $('#user_email').focus();
 				        return false;
 				     }
