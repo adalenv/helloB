@@ -59,8 +59,8 @@
 				var phone=$('#user_phone_number').val().substring(getInfo.country_calling_code.length,$('#user_phone_number').val().length);
 				var phone_code=$('#user_phone_number').val().substring(0,getInfo.country_calling_code.length).replace('+','');
 				var phone_operator=$('#user_phone_number').val().substring(phone_code.length+1,phone_code.length+3);
-				console.log(phone);
-
+				phoneSend=phone.substring(phone_operator.length,phone.length);
+				console.log(phoneSend);
 				$.ajax({
 					url: app.config.ajax.register,
 					type: 'GET',
@@ -72,14 +72,14 @@
 						Password: $('#user_password').val(),
 						PhoneCountry: phone_code,
 						PhoneOperator: phone_operator,
-						PhoneNumber:  phone.substring(phone_operator.length,phone.length),
+						PhoneNumber:  phoneSend,
 						Country:getInfo.country,
 						Terms:    true
 					},
 				})
 				.done(function(response) {
 					app.do.login($('#user_email').val(),$('#user_password').val());
-					console.log(response);
+					//console.log(response);
 				})
 				.fail(function(response) {
 					console.log(JSON.parse(response.responseText).message);
@@ -88,11 +88,8 @@
 				});
 			},
 			home:function(){
-				console.log('test');
 				$('.signup-btn').on('click',function(event) {
-					
 					event.preventDefault();
-					
 					if(!(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test($('#user_email').val()))){
 				        alert('Please enter a valid email');
 				        $('#user_email').focus();
