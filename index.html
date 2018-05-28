@@ -1,10 +1,6 @@
 <!DOCTYPE html><!-- Last Published: Tue May 01 2018 15:37:11 GMT+0000 (UTC) -->
 <html data-wf-domain="www.hellobonsai.com" data-wf-page="597158b777e4d255606f6f87" data-wf-site="58868bcd2ef4daaf0f072900" lang="en">
    <head>
-    <script src="js/lazyload.min.js"></script>
-    <script>
-        var myLazyLoad = new LazyLoad();
-    </script>
       <script type="text/javascript">
           if ('serviceWorker' in navigator) {
              navigator.serviceWorker.register('service-worker.js');
@@ -19,15 +15,87 @@
       <meta content="summary" name="twitter:card"/>
       <meta content="width=device-width, initial-scale=1" name="viewport"/>
       <link rel="manifest" href="manifest.json">
-<!--       <link href="css/hbonsai.webflow.0f700197c.min.css" rel="stylesheet" type="text/css"/>
-     -->
-
+      <meta name="theme-color" content="#00ac84"/>
       <link href="img/logo.png" rel="shortcut icon" type="image/png"/>
       <link href="img/logo.svg" rel="apple-touch-icon"/>
         <style type="text/css">
-          .button-green{
-            color: white !important;
-          }
+
+/*! CSS Used from: css/hbonsai.webflow.0f700197c.min.css */
+.w-container:after,.w-row:after{clear:both;}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;height:100%;}
+body{margin:0;min-height:100%;background-color:#fff;}
+nav{display:block;}
+a{background-color:transparent;}
+a:active,a:hover{outline:0;}
+img{border:0;vertical-align:middle;display:inline-block;}
+input{color:inherit;font:inherit;margin:0;}
+input::-moz-focus-inner{border:0;padding:0;}
+input{line-height:normal;}
+[class^=w-icon-]{font-family:webflow-icons;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.w-icon-nav-menu:before{content:"\e602";}
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.w-inline-block{max-width:100%;display:inline-block;}
+.w-button{display:inline-block;padding:9px 15px;color:#fff;border:0;line-height:inherit;text-decoration:none;cursor:pointer;border-radius:0;}
+p{margin-top:0;margin-bottom:10px;}
+h2{margin-top:20px;}
+h6{margin-top:10px;}
+label{display:block;margin-bottom:5px;font-weight:700;}
+body{font-weight:400;}
+.w-container:after,.w-container:before,.w-row:after,.w-row:before{display:table;content:" ";}
+.w-container{margin-left:auto;margin-right:auto;max-width:940px;}
+.w-container .w-row{margin-left:-10px;margin-right:-10px;}
+.w-row .w-row{margin-left:0;margin-right:0;}
+.w-col{position:relative;float:left;width:100%;min-height:1px;padding-left:10px;padding-right:10px;}
+.w-col .w-col{padding-left:0;padding-right:0;}
+.w-col-3{width:25%;}
+.w-col-4{width:33.33333333%;}
+.w-col-6{width:50%;}
+.w-col-9{width:75%;}
+@media screen and (max-width:991px){
+.w-container{max-width:728px;}
+.w-col-medium-4{width:33.33333333%;}
+}
+@media screen and (max-width:767px){
+.w-container .w-row,.w-row{margin-left:0;margin-right:0;}
+.w-col{width:100%;left:auto;right:auto;}
+.w-col-small-6{width:50%;}
+}
+@media screen and (max-width:479px){
+.w-container{max-width:none;}
+.w-col{width:100%;}
+}
+.w-nav-button{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;-ms-user-select:none;}
+@media screen and (max-width:767px){
+.w-nav-brand{padding-left:10px;}
+}
+.navlink{text-transform:uppercase;}
+body{font-family:'Proximanova regular',sans-serif;}
+.w-nav-link{vertical-align:top;text-decoration:none;}
+h2,h3{margin-bottom:10px;}
+body{line-height:20px;}
+.logo-image{opacity:.6;}
+img{max-width:100%;}
+.w-nav-button,a{cursor:pointer;}
+.w-nav,.w-nav-brand,.w-nav-link,.w-nav-menu{position:relative;}
+.w-nav:after{clear:both;}
+.w-nav{background:#ddd;z-index:1000;}
+.w-nav:after,.w-nav:before{content:" ";display:table;}
+.w-nav-brand{float:left;text-decoration:none;color:#333;}
+.w-nav-link{display:inline-block;color:#222;padding:20px;text-align:left;margin-left:auto;margin-right:auto;}
+.w-nav-menu{float:right;}
+.w--nav-menu-open{display:block!important;position:absolute;top:100%;left:0;right:0;background:#C8C8C8;text-align:center;overflow:visible;min-width:200px;}
+.w--nav-link-open{display:block;position:relative;}
+.w-nav-overlay{position:absolute;overflow:hidden;display:none;top:100%;left:0;right:0;width:100%;}
+.w-nav-button{position:relative;}
+.w-nav-overlay .w--nav-menu-open{top:0;}
+.w-nav-button{float:right;padding:18px;font-size:24px;display:none;tap-highlight-color:transparent;-moz-user-select:none;user-select:none;}
+@media screen and (max-width:991px){
+.w-nav[data-collapse=medium] .w-nav-menu{display:none;}
+.w-nav[data-collapse=medium] .w-nav-button{display:block;}
+}
+@media screen and (max-width:767px){
+.w-nav-brand{padding-left:10px;}
+}
         </style>
 
 
@@ -55,7 +123,7 @@
       </div>
       <div id="1" class="gray-section-header">
 
-        <video id="video_c" style="border: 3px solid #cacaca;border-radius: 5px;" width="707" sizes="(max-width: 479px) 100vw, (max-width: 767px) 80vw, 750px" class="dashboard-image lazyload"/>
+        <video autoplay=""  id="video_c" style="border: 3px solid #cacaca;border-radius: 5px;" width="707" sizes="(max-width: 479px) 100vw, (max-width: 767px) 80vw, 750px" class="dashboard-image lazyload"/>
           <source src="https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_10mb.mp4" type="video/mp4">
         Your browser does not support the video tag.
         </video> 
@@ -92,7 +160,7 @@
                 <input type="submit" name="commit" value="Get started now" class="signup-btn btn btn-md btn-primary btn-block" data-disable-with="Get started now" />
                 </div>
                 <div class="logo-div" style="opacity: 0.4 !important;">
-              <img src="img/secure.png" width="420" srcset="img/secure.png 500w, img/secure.png 535w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 83vw, 420px" class="logo-image"/>
+              <img alt="Image" data-src="img/secure.png" width="420" srcset="img/secure.png 500w, img/secure.png 535w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 83vw, 420px" class="logo-image lazyload"/>
             </div>
                 </form>
            </div>
@@ -193,7 +261,7 @@
                      <div class="w-col w-col-6 w-col-small-6">
                         <a class="product-link-block w-inline-block">
                            <div class="product-div">
-                              <img src="img/594c8b43f9a65a6318d464b9_icon-timetracking.png" class="product-div-icon"/>
+                              <img alt="Image" data-src="img/594c8b43f9a65a6318d464b9_icon-timetracking.png" class="product-div-icon lazyload"/>
                               <h6 class="product-div-heading">Save time with Autotrading</h6>
                            </div>
                         </a>
@@ -201,7 +269,7 @@
                      <div class="w-col w-col-6 w-col-small-6">
                         <a class="product-link-block w-inline-block">
                            <div class="product-div">
-                              <img src="img/594c8b4296962151a16d0695_icon-payment.png" class="product-div-icon"/>
+                              <img alt="Image" data-src="img/594c8b4296962151a16d0695_icon-payment.png" class="product-div-icon lazyload"/>
                               <h6 class="product-div-heading">Quick Deposits &amp; withdraws</h6>
                            </div>
                         </a>
@@ -211,7 +279,7 @@
                      <div class="w-col w-col-6 w-col-small-6">
                         <a class="product-link-block w-inline-block">
                            <div class="product-div">
-                              <img src="img/594d52e260455a7c3e3ab139_icon-reporting.png" class="product-div-icon"/>
+                              <img alt="Image" data-src="img/594d52e260455a7c3e3ab139_icon-reporting.png" class="product-div-icon lazyload"/>
                               <h6 class="product-div-heading">Detailed reports</h6>
                            </div>
                         </a>
@@ -284,7 +352,7 @@
                   <div class="testimonial-text">&quot;I’ve been a member of Platinums for only 35 days. But my life has already changed! Not only have I made my first $100K, but I’ve also met some of the most incredible people in the process. Thanks, Platinums!&quot;</div>
                   <div class="_1px-div"></div>
                   <div class="w-row">
-                     <div class="w-col w-col-3"><img data-src="img/5888e1f5f34690422d33efce_david-mihm.jpg" width="70" class="twitter-image lazyload"/></div>
+                     <div class="w-col w-col-3"><img alt="Image" data-src="img/5888e1f5f34690422d33efce_david-mihm.jpg" width="70" class="twitter-image lazyload"/></div>
                      <div class="w-col w-col-9">
                         <div class="testimonial-name">David M.</div>
                         <div class="testimonial-company">Joined 1 month ago</div>
@@ -295,7 +363,7 @@
                   <div class="testimonial-text">&quot;When I joined Platinums never could have I ever imagined the series of events that would unfold just days after locking in my free software. I was able to clear my $131,382 debt. There is no greater feeling than to be debt-free. Now, I’m in the process of buying my dream home. I still can’t believe this is all really happening.&quot;</div>
                   <div class="_1px-div"></div>
                   <div class="w-row">
-                     <div class="w-col w-col-3"><img data-src="img/5888e56ffe81b74722a25aa8_DavidUrbinati.jpg" width="70" class="twitter-image lazyload"/></div>
+                     <div class="w-col w-col-3"><img alt="Image" data-src="img/5888e56ffe81b74722a25aa8_DavidUrbinati.jpg" width="70" class="twitter-image lazyload"/></div>
                      <div class="w-col w-col-9">
                         <div class="testimonial-name">David U.</div>
                         <div class="testimonial-company">Joined 2 month ago</div>
@@ -308,7 +376,7 @@
                   <div class="testimonial-text">&quot;I ask my wife to pinch me every morning when I wake up and check my bank balance. I have never seen a number that big before in MY bank account. And it just continues to grow and grow some more...this is what I’ve been waiting for my entire life. Now that I have a taste of what it really feels like to be my own boss and make tens of thousands of dollars every week, I won’t ever look back.&quot;</div>
                   <div class="_1px-div"></div>
                   <div class="w-row">
-                     <div class="w-col w-col-3"><img data-src="img/588913c6065c48675c827252_nat.jpg" width="70" class="twitter-image lazyload"/></div>
+                     <div class="w-col w-col-3"><img alt="Image" data-src="img/588913c6065c48675c827252_nat.jpg" width="70" class="twitter-image lazyload"/></div>
                      <div class="w-col w-col-9">
                         <div class="testimonial-name">Nathanael S.</div>
                         <div class="testimonial-company">Joined 2 month ago</div>
@@ -319,7 +387,7 @@
                   <div class="testimonial-text">&quot;I finally know what it’s like to live the dream. I no longer feel like I’m on the outside looking in while everyone else has all the fun. Bitcoins Wealth has allowed me to retire early and live the 1% lifestyle.&quot;</div>
                   <div class="_1px-div"></div>
                   <div class="w-row">
-                     <div class="w-col w-col-3"><img data-src="img/588913ce796cb37d4ddfa28e_jold.jpg" width="70" class="twitter-image lazyload"/></div>
+                     <div class="w-col w-col-3"><img alt="Image" data-src="img/588913ce796cb37d4ddfa28e_jold.jpg" width="70" class="twitter-image lazyload"/></div>
                      <div class="w-col w-col-9">
                         <div class="testimonial-name">Jon G.</div>
                         <div class="testimonial-company">Joined 3 month ago</div>
@@ -335,15 +403,15 @@
             <div class="section-subtitle">We&#x27;re there for you anywhere and allow to work with clients everywhere.</div>
             <div class="global-items-row w-row">
                <div class="w-col w-col-4">
-                  <div data-ix="global-item-float" class="floating-item-div"><img data-src="img/594d53ff60455a7c3e3ab162_icon-contract-global.png" width="60" class="floating-item-icon lazyload"/></div>
+                  <div data-ix="global-item-float" class="floating-item-div"><img alt="Image" data-src="img/594d53ff60455a7c3e3ab162_icon-contract-global.png" width="60" class="floating-item-icon lazyload"/></div>
                   <h6 class="globe-item-heading">International contracts</h6>
                </div>
                <div class="w-col w-col-4">
-                  <div data-ix="global-item-float-2" class="floating-item-div"><img data-src="img/594ca026fd68744dec2f0696_icon-coins.png" width="60" class="floating-item-icon lazyload"/></div>
+                  <div data-ix="global-item-float-2" class="floating-item-div"><img alt="Image" data-src="img/594ca026fd68744dec2f0696_icon-coins.png" width="60" class="floating-item-icon lazyload"/></div>
                   <h6 class="globe-item-heading ">180 currencies</h6>
                </div>
                <div class="w-col w-col-4">
-                  <div data-ix="global-item-float-3" class="floating-item-div"><img data-src="img/594ca0260e12a11627d2462e_icon-card.png" width="60" class="floating-item-icon lazyload"/></div>
+                  <div data-ix="global-item-float-3" class="floating-item-div"><img alt="Image" data-src="img/594ca0260e12a11627d2462e_icon-card.png" width="60" class="floating-item-icon lazyload"/></div>
                   <h6 class="globe-item-heading">Global payments</h6>
                </div>
             </div>
@@ -370,54 +438,46 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
    </body>
 </html>
-<!-- <link rel="stylesheet" media="all" href="css/style_all.css" data-turbolinks-track="true" />
-<link rel="stylesheet" href="css/toastr.min.css">
-      <link rel="stylesheet" href="css/fontawesome-all.min.css"> -->
-<script src="js/jquery-3.3.1.min.js" ></script>
-<script src="js/lazysizes.min.js"></script>
-<script src="js/toastr.min.js"></script>
-<script type="text/javascript" src="mod.js"></script>
 
+
+<script src="js/jquery-3.3.1.min.js" ></script>
+
+<script src="js/toastr.min.js" defer=""></script>
+<script src="mod.js"></script>
+<script src="js/lazyload.min.js" ></script>
 <script>
+        var myLazyLoad = new LazyLoad();
 
 
 $(document).ready(function() {
-
-$(window).scroll(function() {
-    if($(window).scrollTop() > 80) {
-        $('.nav-bar-all').css({
-          'height': '0',
-          'padding': '0'
-        });
-        $('.w-nav-overlay').slideDown('slow', function() {});
-
-    }else{
-        $('.nav-bar-all').css({
-          'height': '80',
-          'padding': '10px 40px'
-        });
-        $('.w-nav-overlay').slideUp('fast', function() {});
-    }
-});
-
-  $('.w-nav-button').on('click',function(event) {
-      $('.w-nav-overlay').slideToggle('fast', function() { });
-  });
-  $(document).on('click', function(e) {
-      if ($(e.target).is(".w-icon-nav-menu") || $(e.target).is("w-nav-button") ||  $(window).scrollTop() > 80) {
-         return;
-      }
-      if ($('.w-nav-overlay').css('display') == 'block' ){
-          $('.w-nav-overlay').slideUp('fast', function() { });
-          return;
+  $(window).scroll(function() {
+      if($(window).scrollTop() > 80) {
+          $('.nav-bar-all').css({
+            'height': '0',
+            'padding': '0'
+          });
+          $('.w-nav-overlay').slideDown('slow', function() {});
+      }else{
+          $('.nav-bar-all').css({
+            'height': '80',
+            'padding': '10px 40px'
+          });
+          $('.w-nav-overlay').slideUp('fast', function() {});
       }
   });
-
-    setTimeout(function(){
-      $('#video_c')[0].play();
-    },1000);
-    _V();
-
+    $('.w-nav-button').on('click',function(event) {
+        $('.w-nav-overlay').slideToggle('fast', function() { });
+    });
+    $(document).on('click', function(e) {
+        if ($(e.target).is(".w-icon-nav-menu") || $(e.target).is("w-nav-button") ||  $(window).scrollTop() > 80) {
+           return;
+        }
+        if ($('.w-nav-overlay').css('display') == 'block' ){
+            $('.w-nav-overlay').slideUp('fast', function() { });
+            return;
+        }
+    });
+      _V();
 });
 
 function rand(min, max) {
@@ -451,87 +511,13 @@ function _V(){
         $($(".vname")[i]).css('color','#b20000');
       }   
     }
-  },1500);
+  },0);
   setTimeout('_V()', rand(20000,60000));
 }
 </script>
+
 <style type="text/css">
- /*! CSS Used from: css/hbonsai.webflow.0f700197c.min.css */
-.w-container:after,.w-row:after{clear:both;}
-html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;height:100%;}
-body{margin:0;min-height:100%;background-color:#fff;}
-nav{display:block;}
-a{background-color:transparent;}
-a:active,a:hover{outline:0;}
-img{border:0;vertical-align:middle;display:inline-block;}
-input{color:inherit;font:inherit;margin:0;}
-input::-moz-focus-inner{border:0;padding:0;}
-input{line-height:normal;}
-[class^=w-icon-]{font-family:webflow-icons;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-.w-icon-nav-menu:before{content:"\e602";}
-*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
-.w-inline-block{max-width:100%;display:inline-block;}
-.w-button{display:inline-block;padding:9px 15px;background-color:#3898EC;color:#fff;border:0;line-height:inherit;text-decoration:none;cursor:pointer;border-radius:0;}
-p{margin-top:0;margin-bottom:10px;}
-h2{margin-top:20px;}
-h6{margin-top:10px;}
-label{display:block;margin-bottom:5px;font-weight:700;}
-body{font-weight:400;}
-.w-container:after,.w-container:before,.w-row:after,.w-row:before{display:table;content:" ";}
-.w-container{margin-left:auto;margin-right:auto;max-width:940px;}
-.w-container .w-row{margin-left:-10px;margin-right:-10px;}
-.w-row .w-row{margin-left:0;margin-right:0;}
-.w-col{position:relative;float:left;width:100%;min-height:1px;padding-left:10px;padding-right:10px;}
-.w-col .w-col{padding-left:0;padding-right:0;}
-.w-col-3{width:25%;}
-.w-col-4{width:33.33333333%;}
-.w-col-6{width:50%;}
-.w-col-9{width:75%;}
-@media screen and (max-width:991px){
-.w-container{max-width:728px;}
-.w-col-medium-4{width:33.33333333%;}
-}
-@media screen and (max-width:767px){
-.w-container .w-row,.w-row{margin-left:0;margin-right:0;}
-.w-col{width:100%;left:auto;right:auto;}
-.w-col-small-6{width:50%;}
-}
-@media screen and (max-width:479px){
-.w-container{max-width:none;}
-.w-col{width:100%;}
-}
-.w-nav-button{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;-ms-user-select:none;}
-@media screen and (max-width:767px){
-.w-nav-brand{padding-left:10px;}
-}
-.navlink{text-transform:uppercase;}
-body{font-family:'Proximanova regular',sans-serif;}
-.w-nav-link{vertical-align:top;text-decoration:none;}
-h2,h3{margin-bottom:10px;}
-body{line-height:20px;}
-.logo-image{opacity:.6;}
-img{max-width:100%;}
-.w-nav-button,a{cursor:pointer;}
-.w-nav,.w-nav-brand,.w-nav-link,.w-nav-menu{position:relative;}
-.w-nav:after{clear:both;}
-.w-nav{background:#ddd;z-index:1000;}
-.w-nav:after,.w-nav:before{content:" ";display:table;}
-.w-nav-brand{float:left;text-decoration:none;color:#333;}
-.w-nav-link{display:inline-block;color:#222;padding:20px;text-align:left;margin-left:auto;margin-right:auto;}
-.w-nav-menu{float:right;}
-.w--nav-menu-open{display:block!important;position:absolute;top:100%;left:0;right:0;background:#C8C8C8;text-align:center;overflow:visible;min-width:200px;}
-.w--nav-link-open{display:block;position:relative;}
-.w-nav-overlay{position:absolute;overflow:hidden;display:none;top:100%;left:0;right:0;width:100%;}
-.w-nav-button{position:relative;}
-.w-nav-overlay .w--nav-menu-open{top:0;}
-.w-nav-button{float:right;padding:18px;font-size:24px;display:none;tap-highlight-color:transparent;-moz-user-select:none;user-select:none;}
-@media screen and (max-width:991px){
-.w-nav[data-collapse=medium] .w-nav-menu{display:none;}
-.w-nav[data-collapse=medium] .w-nav-button{display:block;}
-}
-@media screen and (max-width:767px){
-.w-nav-brand{padding-left:10px;}
-}
+ 
 body,h2,h3{color:#4c525a;}
 body{padding-top:80px;font-size:14px;}
 h2{font-family:'Proximanova light',sans-serif;font-size:32px;line-height:38px;font-weight:300;}
@@ -784,3 +770,22 @@ label{font-family:proxima nova,helvetica neue,sans-serif;font-weight:600;}
 @font-face{font-family:proxima nova;font-weight:500;font-style:italic;src:url(css/fonts/ProximaNova-RegularIt-26a009d421d9fa1ba501bf6aba30cd742c9fea402ecd662e56bed111f1c203b8.eot);src:url(css/fonts/ProximaNova-RegularIt-26a009d421d9fa1ba501bf6aba30cd742c9fea402ecd662e56bed111f1c203b8.eot#iefix) format("embedded-opentype"),url(css/fonts/ProximaNova-RegularIt-6a7bb73bc3b47b6d1ad2951ef02260e0d2cf870f27ef5f27b42271f49195fc17.woff) format("woff"),url(css/fonts/ProximaNova-RegularIt-6d12a88841e6d0329797fc9528130c94221c4613c6bb2f280c0089b144ecfd2c.ttf) format("truetype"),url(css/fonts/ProximaNova-RegularIt-78cb1857600b54e115411d64241cf71d2b34d8983243bcc3fe7a1176728ee788.svg#ProximaNova-RegularIt) format("svg");}
 @font-face{font-family:proxima nova;font-weight:600;font-style:normal;src:url(css/fonts/ProximaNova-Semibold-3e07e984583a526f18aefacc35c3df0799c39d055911d7ab1e83ce775ed66391.eot);src:url(css/fonts/ProximaNova-Semibold-3e07e984583a526f18aefacc35c3df0799c39d055911d7ab1e83ce775ed66391.eot#iefix) format("embedded-opentype"),url(css/fonts/ProximaNova-Semibold-ed575f80189c08ab12dbac29d5c51249580b879bcae8ba0fd115255481fc7f84.woff) format("woff"),url(css/fonts/ProximaNova-Semibold-911c15220f8f1819fd15e1672eb7f957396c33fbdf561be48c2ef81dffa853b3.ttf) format("truetype"),url(css/fonts/ProximaNova-Semibold-f7b08de0fe6cc74fc34faa3c0a135d854fca27d46ef9ec362ec8680f8fdb6132.svg#ProximaNova-Semibold) format("svg");}
  </style>
+<!--   <link rel="stylesheet" href="css/toastr.min.css">
+  <link rel="stylesheet" href="css/fontawesome-all.min.css"> -->
+<script type="text/javascript">
+/* First CSS File */
+var giftofspeed = document.createElement('link');
+giftofspeed.rel = 'stylesheet';
+giftofspeed.href = 'css/fontawesome-all.min.css';
+giftofspeed.type = 'text/css';
+var godefer = document.getElementsByTagName('link')[0];
+godefer.parentNode.insertBefore(giftofspeed, godefer);
+
+/* Second CSS File */
+var giftofspeed2 = document.createElement('link');
+giftofspeed2.rel = 'stylesheet';
+giftofspeed2.href = 'css/toastr.min.css';
+giftofspeed2.type = 'text/css';
+var godefer2 = document.getElementsByTagName('link')[0];
+godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+</script>

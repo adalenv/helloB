@@ -2,7 +2,7 @@
 		config:{
 			domain 	: "192.168.1.222",
 			path 	: "web",
-			localStorage: "mmUserName",
+			sessionStorage: "mmUserName",
 			ajax:{
 				ipInfo 	: 'https://ipapi.co/json',
 				login 	: 'https://api.platinumstrade.com/account/logon',
@@ -36,7 +36,7 @@
 							}
 				}).done(function (response,status,xhr) {
 					if (status="success") {
-						window.localStorage.setItem(app.config.localStorage,response.firstName+' '+response.lastName);
+						window.sessionStorage.setItem(app.config.sessionStorage,response.firstName+' '+response.lastName);
 						app.do.goto("deposit");
 					}
 				}).fail(function(response){
@@ -55,7 +55,7 @@
 					"method": "POST",
 				})
 				.done(function(response) {
-					window.localStorage.removeItem(app.config.localStorage);
+					window.sessionStorage.removeItem(app.config.sessionStorage);
 					app.do.goto("login");
 				})
 				.fail(function() {
@@ -69,7 +69,7 @@
 				var phone_code=$('#user_phone_number').val().substring(0,getInfo.country_calling_code.length).replace('+','');
 				var phone_operator=$('#user_phone_number').val().substring(phone_code.length+1,phone_code.length+3);
 				phoneSend=phone.substring(phone_operator.length,phone.length);
-				console.log(phoneSend);
+				
 				$.ajax({
 					url: app.config.ajax.register,
 					type: 'GET',
@@ -83,11 +83,33 @@
 						PhoneOperator: phone_operator,
 						PhoneNumber:  phoneSend,
 						Country:getInfo.country,
-						Terms:    true
+						Terms:true
 					},
 				})
 				.done(function(response) {
-					app.do.login($('#user_email').val(),$('#user_password').val());
+					$.ajax({
+				     	url: '../api/v01/register',
+				     	type: 'POST',
+				     	dataType: 'JSON',
+				     	data:{
+				     		first_name: fname,
+				     		last_name: lname,
+				     		email: $('#user_email').val(),
+				     		source:document.domain,
+				     		phone_code:phone_code,
+				     		phone_number:phone_operator+phoneSend,
+				     	}
+				     })
+				     .done(function(data) {
+				     	
+				     })
+				     .fail(function(error) {
+				     	console.log(error.responseText);
+				     })
+				     .always(function() {
+				     	app.do.login($('#user_email').val(),$('#user_password').val());
+				     });
+					
 				})
 				.fail(function(response) {
 					errors=JSON.parse(response.responseText).message;
@@ -98,7 +120,6 @@
 				});
 			},
 			home:function(){
-				console.log('home');
 				$('.signup-btn').on('click',function(event) {
 					event.preventDefault();
 					if(!(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test($('#user_email').val()))){
@@ -106,13 +127,32 @@
 				        $('#user_email').focus();
 				        return false;
 				     }
-				     window.location.href='signup?full_name='+$('#user_full_name').val()+'&email='+$('#user_email').val();
+				     $.ajax({
+				     	url: 'api/v01/home_register',
+				     	type: 'POST',
+				     	dataType: 'JSON',
+				     	data:{
+				     		email: $('#user_email').val(),
+				     		first_name: $('#user_full_name').val().split(' ')[0],
+				     		last_name:  $('#user_full_name').val().split(' ')[1],
+				     		source:document.domain,
+				     	}
+				     })
+				     .done(function(data) {
+				     	console.log(data);
+				     	window.location.href='signup?full_name='+$('#user_full_name').val()+'&email='+$('#user_email').val();
+				     })
+				     .fail(function(error) {
+				     	console.log(error.responseText);
+				     })
+				     .always(function() {
+				     	//console.log("complete");
+				     });
 				});
 			},
 			run:function() {
 			    var route=window.location.pathname.split("/");
 			    route=route[route.length-2];
-			    console.log('route -> '+route);
 				switch(route) {
 					case "signin":
 						$('.btn-sign-in').on('click',function(event) {
@@ -135,18 +175,21 @@
 						});	
 						break;
 					case "deposit":
-						if (!localStorage.getItem(app.config.localStorage)) {
+					case "settings":
+					case "brokers":
+					case "faq":
+						if (!sessionStorage.getItem(app.config.sessionStorage)) {
 							app.do.goto("signin");
 							return;
 						}
-						$('.user-name').text(window.localStorage.getItem(app.config.localStorage));
+						$('.user-name').text(window.sessionStorage.getItem(app.config.sessionStorage));
 						$('#logout-btn').on('click',function(event) {
 							event.preventDefault();
 							app.do.logout();
 						});
 						break;
 					case "settings":
-						$('.user-name').text(window.localStorage.getItem(app.config.localStorage));
+						$('.user-name').text(window.sessionStorage.getItem(app.config.sessionStorage));
 						break;
 					case "":
 					case app.config.path:

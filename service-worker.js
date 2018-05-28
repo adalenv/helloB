@@ -6,8 +6,7 @@ const RUNTIME = 'runtime';
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
   'index.html',
-  './', // Alias for index.html
-  'https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_10mb.mp4'
+  './', // Alias for index.html'
 ];
 
 // The install handler takes care of precaching the resources we always need.

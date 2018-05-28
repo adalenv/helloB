@@ -2,17 +2,20 @@
   "name": "Platinums Trade",
   "short_name": "Platinums",
   "icons": [{
-    "src": "img/logo.png",
-      
+      "src": "img/logo.png",
+      "sizes": "256x256",
       "type": "image/png"
-    }, {
+    },{
+      "src": "img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },{
       "src": "img/logo.svg",
       "sizes": "256x256",
       "type": "image/svg"
     }],
   "start_url": "index.html",
   "display": "standalone",
-  "orientation":"portrait",
-  "background_color": "#fafafa",
-  "theme_color": "#00ac84a3"
+  "background_color": "#00ac84",
+  "theme_color": "#00ac84"
 }
