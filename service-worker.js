@@ -7,6 +7,7 @@ const RUNTIME = 'runtime';
 const PRECACHE_URLS = [
   'index.html',
   './', // Alias for index.html
+  'https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_10mb.mp4'
 ];
 
 // The install handler takes care of precaching the resources we always need.

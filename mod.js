@@ -1,7 +1,7 @@
 	app={
 		config:{
 			domain 	: "192.168.1.222",
-			path 	: "www.hellobonsai.com",
+			path 	: "web",
 			localStorage: "mmUserName",
 			ajax:{
 				ipInfo 	: 'https://ipapi.co/json',
@@ -98,6 +98,7 @@
 				});
 			},
 			home:function(){
+				console.log('home');
 				$('.signup-btn').on('click',function(event) {
 					event.preventDefault();
 					if(!(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test($('#user_email').val()))){
