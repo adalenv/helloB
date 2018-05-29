@@ -9,20 +9,12 @@
 				logout 	: 'https://api.platinumstrade.com/account/logoff',
 				register: 'https://api.platinumstrade.com/Registration/Full',
 				},
-			// user:{
-			// 	name: 	$('#user_full_name').val(),
-			// 	phone: 	$('#user_phone_number').val(),
-			// 	email:  $('#user_email').val(),
-			// 	passw:  $('#user_password').val(),
-			// 	passw:  $('#user_password').val()
-			// }
 		},
 		do:{
 			getInfo:function(){
 				$.get(app.config.ajax.ipInfo, function(data) {
 					getInfo=data;
-					$('#user_phone_code').val(getInfo.country_calling_code);
-					$('#user_phone_number').val(getInfo.country_calling_code);
+					//$('#user_phone_number').val(getInfo.country_calling_code);
 				});
 			},
 			login:function(email,password){
@@ -120,35 +112,37 @@
 				});
 			},
 			home:function(){
-				$('.signup-btn').on('click',function(event) {
-					event.preventDefault();
-					if(!(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test($('#user_email').val()))){
-				        toastr.error('Please enter a valid email');
-				        $('#user_email').focus();
-				        return false;
-				     }
-				     $.ajax({
-				     	url: 'api/v01/home_register',
-				     	type: 'POST',
-				     	dataType: 'JSON',
-				     	data:{
-				     		email: $('#user_email').val(),
-				     		first_name: $('#user_full_name').val().split(' ')[0],
-				     		last_name:  $('#user_full_name').val().split(' ')[1],
-				     		source:document.domain,
-				     	}
-				     })
-				     .done(function(data) {
-				     	console.log(data);
-				     	window.location.href='signup?full_name='+$('#user_full_name').val()+'&email='+$('#user_email').val();
-				     })
-				     .fail(function(error) {
-				     	console.log(error.responseText);
-				     })
-				     .always(function() {
-				     	//console.log("complete");
-				     });
+				$.get(app.config.ajax.ipInfo, function(data) {
+					aaa=data;
+					$('#user_phone_number').val(data.country_calling_code);
 				});
+				// $('.signup-btn').on('click',function(event) {
+				// 	event.preventDefault();
+				// 	     $.ajax({
+				// 	     	url: 'api/v01/home_register',
+				// 	     	type: 'POST',
+				// 	     	dataType: 'JSON',
+				// 	     	data:{
+				// 	     		phone_number: $('#user_phone_number').val().replace('+',''),
+				// 	     		first_name: $('#user_full_name').val().split(' ')[0],
+				// 	     		last_name:  $('#user_full_name').val().split(' ')[1],
+				// 	     		source:document.domain,
+				// 	     	}
+				// 	     })
+				// 	     .done(function(data) {
+				// 	   //   	    var phone=$('#user_phone_number').val().substring(getInfo.country_calling_code.length,$('#user_phone_number').val().length);
+				// 				// var phone_code=$('#user_phone_number').val().substring(0,getInfo.country_calling_code.length);
+				// 				// var phone_operator=$('#user_phone_number').val().substring(phone_code.length+1,phone_code.length+3);
+				// 				// var phoneSend=phone.substring(phone_operator.length,phone.length);
+				// 	     })
+				// 	     .fail(function(error) {
+				// 	     	console.log(error.responseText);
+				// 	     })
+				// 	     .always(function() {
+				// 	     	//console.log("complete");
+				// 	     });
+
+				// });
 			},
 			run:function() {
 			    var route=window.location.pathname.split("/");
@@ -168,6 +162,9 @@
 						}
 						if(url.searchParams.get('email')){
 							$('#user_email').val(url.searchParams.get('email'));
+						}
+						if(url.searchParams.get('phone')){
+							$('#user_phone_number').val('+'+url.searchParams.get('phone').replace(' ',''));
 						}
 						$('.signup-btn').on('click',function(event) {
 							event.preventDefault();
@@ -194,6 +191,7 @@
 					case "":
 					case app.config.path:
 					case app.config.domain:
+						//app.do.getInfo();
 						app.do.home();
 						break;
 				}

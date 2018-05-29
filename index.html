@@ -3,9 +3,10 @@
    <head>
       <script type="text/javascript">
           if ('serviceWorker' in navigator) {
-             navigator.serviceWorker.register('service-worker.js');
+            // navigator.serviceWorker.register('service-worker.js');
           }
       </script>
+      <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
       <meta charset="utf-8"/>
       <title>Platinums Trade</title>
       <meta content="Bulletproof contracts, e-signing, &amp; invoices used by 40,000+ top freelancers.  Get peace of mind &amp; get on with your work." name="description"/>
@@ -129,9 +130,8 @@ img{max-width:100%;}
 <!--         <iframe style="border:3px solid #00ac851c;border-radius: 5px;"   sizes="(max-width: 479px) 100vw, (max-width: 767px) 80vw, 750px" class="dashboard-image" width="560" height="315"   src="https://www.youtube.com/embed/np0u1q7nOro?rel=0&amp;controls=0&amp;showinfo=0&autoplay=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
         </iframe> -->
          <div class="w-container">
-
             <div class="signup-page-form relative">
-              <form class="clearfix signup-page-form-content" data-signup-form="true" data-type="json" id="new_user" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+              <div class="clearfix signup-page-form-content" data-signup-form="true" data-type="json" id="new_user" accept-charset="UTF-8" data-remote="true"><input name="utf8" type="hidden" value="&#x2713;" />
                 <input type="hidden" name="distinct_id" id="distinct_id" />
                 <input type="hidden" name="signup_origin" id="signup_origin" />
                 <input value="contractor" type="hidden" name="user[signup_user_role]" id="user_signup_user_role" />
@@ -139,14 +139,14 @@ img{max-width:100%;}
                 <div class="new-form-group">
                 <label class="form-label" for="user_full_name">Full Name</label>
                 <div class="relative">
-                <input class="form-control" placeholder="Jane Smith" type="text" name="user[full_name]" id="user_full_name" />
+                <input class="form-control" autocomplete="off" placeholder="Jane Smith" type="text" name="user[full_name]" id="user_full_name" />
                 </div>
                 </div>
 
                 <div class="new-form-group">
-                <label class="form-label" for="user_email">Email</label>
+                <label class="form-label" for="user_phone_number">Phone</label>
                 <div class="relative">
-                <input class="form-control" placeholder="you@email.com" type="email" name="user[email]" id="user_email" />
+                <input class="form-control" autocomplete="off" placeholder="phone" name="user[email]" id="user_phone_number" />
                 </div>
                 </div>
             
@@ -156,12 +156,12 @@ img{max-width:100%;}
                 </div>
 
                 <div class="form-group">
-                <input type="submit" name="commit" value="Get started now" class="signup-btn btn btn-md btn-primary btn-block" data-disable-with="Get started now" />
+                <input type="submit"  name="commit" value="Get started now" class="signup-btn btn btn-md btn-primary btn-block" data-disable-with="Get started now" />
                 </div>
                 <div class="logo-div" style="opacity: 0.4 !important;">
               <img alt="Image" data-src="img/secure.png" width="420" srcset="img/secure.png 500w, img/secure.png 535w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 83vw, 420px" class="logo-image lazyload"/>
             </div>
-                </form>
+                </dvi>
            </div>
        </div>
       </div>
@@ -445,7 +445,99 @@ img{max-width:100%;}
 <script src="mod.js"></script>
 <script src="js/lazyload.min.js" ></script>
 <script>
-        var myLazyLoad = new LazyLoad();
+  
+  // initialize Account Kit with CSRF protection
+  AccountKit_OnInteractive = function(){
+    AccountKit.init(
+      {
+        appId:"594291707607342", 
+        state:"test", 
+        version:"v1.1",
+        fbAppEventsEnabled:true,
+        debug:true,
+        redirect:document.domain+'/register',
+      }
+    );
+  };
+
+  // login callback
+  function loginCallback(response) {
+    if (response.status === "PARTIALLY_AUTHENTICATED") {
+      var code = response.code;
+      var csrf = response.state;
+      // Send code to server to exchange for access token
+      console.log(response);
+          $.ajax({
+           url: 'api/v01/home_register',
+           type: 'POST',
+           dataType: 'JSON',
+           data:{
+             phone_number:$('#user_phone_number').val().substring(aaa.country_calling_code.length,$('#user_phone_number').val().length),
+             first_name: $('#user_full_name').val().split(' ')[0],
+             last_name:  $('#user_full_name').val().split(' ')[1],
+             phone_code: $('#user_phone_number').val().substring(0,aaa.country_calling_code.length).replace('+',''),
+             source:document.domain,
+           }
+          })
+          .done(function(data) {
+            window.location.href='signup/?phone='+$('#user_phone_number').val()+'&full_name='+$('#user_full_name').val();
+          // var phone=$('#user_phone_number').val().substring(getInfo.country_calling_code.length,$('#user_phone_number').val().length);
+           // var phone_code=$('#user_phone_number').val().substring(0,getInfo.country_calling_code.length);
+           // var phone_operator=$('#user_phone_number').val().substring(phone_code.length+1,phone_code.length+3);
+           // var phoneSend=phone.substring(phone_operator.length,phone.length);
+          })
+          .fail(function(error) {
+           console.log(error.responseText);
+          })
+          .always(function() {
+           //console.log("complete");
+          });
+      
+    }
+    else if (response.status === "NOT_AUTHENTICATED") {
+      // handle authentication failure
+      console.log(response);
+    }
+    else if (response.status === "BAD_PARAMS") {
+      // handle bad parameters
+      console.log(response);
+    }
+  }
+
+  // phone form submission handler
+  function smsLogin() {
+    if ($('#user_full_name').val()=='' || $('#user_full_name').val().match(/\b\w+\b/g).length<2 ) {
+      $('#user_full_name').focus();
+      return;
+    }
+    var phone=$('#user_phone_number').val().substring(aaa.country_calling_code.length,$('#user_phone_number').val().length);
+    var phone_code=$('#user_phone_number').val().substring(0,aaa.country_calling_code.length);
+    var phone_operator=$('#user_phone_number').val().substring(phone_code.length+1,phone_code.length+3);
+    var phoneSend=phone.substring(phone_operator.length,phone.length);
+    AccountKit.login(
+      'PHONE', 
+      {countryCode: phone_code, phoneNumber: phone}, // will use default values if not specified
+      loginCallback
+    );
+  }
+
+  // email form submission handler
+  function emailLogin() {
+    var emailAddress = document.getElementById("email").value;
+    AccountKit.login(
+      'EMAIL',
+      {emailAddress: emailAddress},
+      loginCallback
+    );
+  }
+
+  $('.signup-btn').on('click',function(event) {
+    event.preventDefault;
+    smsLogin();
+
+  });
+
+var myLazyLoad = new LazyLoad();
 
 
 $(document).ready(function() {
