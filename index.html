@@ -5,7 +5,14 @@
           if ('serviceWorker' in navigator) {
             // navigator.serviceWorker.register('service-worker.js');
           }
+        window.addEventListener("load",function() {
+          setTimeout(function(){
+                // This hides the address bar:
+                window.scrollTo(0, 1);
+          }, 0);
+        });
       </script>
+      <meta name="mobile-web-app-capable" content="yes">
       <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
       <meta charset="utf-8"/>
       <title>Platinums Trade</title>
@@ -124,7 +131,7 @@ img{max-width:100%;}
       <div id="1" class="gray-section-header">
 
         <video autoplay=""  id="video_c" style="border: 3px solid #cacaca;border-radius: 5px;" width="707" sizes="(max-width: 479px) 100vw, (max-width: 767px) 80vw, 750px" class="dashboard-image lazyload"/>
-          <source src="https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_10mb.mp4" type="video/mp4">
+          <source src="http://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_1280_10MG.mp4" type="video/mp4">
         Your browser does not support the video tag.
         </video> 
 <!--         <iframe style="border:3px solid #00ac851c;border-radius: 5px;"   sizes="(max-width: 479px) 100vw, (max-width: 767px) 80vw, 750px" class="dashboard-image" width="560" height="315"   src="https://www.youtube.com/embed/np0u1q7nOro?rel=0&amp;controls=0&amp;showinfo=0&autoplay=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -161,7 +168,7 @@ img{max-width:100%;}
                 <div class="logo-div" style="opacity: 0.4 !important;">
               <img alt="Image" data-src="img/secure.png" width="420" srcset="img/secure.png 500w, img/secure.png 535w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 83vw, 420px" class="logo-image lazyload"/>
             </div>
-                </dvi>
+                </div>
            </div>
        </div>
       </div>
@@ -460,7 +467,7 @@ img{max-width:100%;}
     );
   };
 
-  // login callback
+ // login callback
   function loginCallback(response) {
     if (response.status === "PARTIALLY_AUTHENTICATED") {
       var code = response.code;
@@ -481,16 +488,11 @@ img{max-width:100%;}
           })
           .done(function(data) {
             window.location.href='signup/?phone='+$('#user_phone_number').val()+'&full_name='+$('#user_full_name').val();
-          // var phone=$('#user_phone_number').val().substring(getInfo.country_calling_code.length,$('#user_phone_number').val().length);
-           // var phone_code=$('#user_phone_number').val().substring(0,getInfo.country_calling_code.length);
-           // var phone_operator=$('#user_phone_number').val().substring(phone_code.length+1,phone_code.length+3);
-           // var phoneSend=phone.substring(phone_operator.length,phone.length);
           })
           .fail(function(error) {
            console.log(error.responseText);
           })
           .always(function() {
-           //console.log("complete");
           });
       
     }
@@ -500,14 +502,16 @@ img{max-width:100%;}
     }
     else if (response.status === "BAD_PARAMS") {
       // handle bad parameters
-      console.log(response);
+      //console.log(response);
+      toastr.error("Please check phone number!");
     }
   }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // phone form submission handler
   function smsLogin() {
     if ($('#user_full_name').val()=='' || $('#user_full_name').val().match(/\b\w+\b/g).length<2 ) {
       $('#user_full_name').focus();
+      toastr.error("Name not valid!");
       return;
     }
     var phone=$('#user_phone_number').val().substring(aaa.country_calling_code.length,$('#user_phone_number').val().length);
@@ -530,13 +534,23 @@ img{max-width:100%;}
       loginCallback
     );
   }
-
+/////////////////////////////////////////////////////////
   $('.signup-btn').on('click',function(event) {
     event.preventDefault;
     smsLogin();
 
   });
-
+  $("#user_full_name").on('keyup', function (e) {
+    if (e.keyCode == 13) {
+        smsLogin();
+    }
+});
+  $("#user_phone_number").on('keyup', function (e) {
+    if (e.keyCode == 13) {
+        smsLogin();
+    }
+});
+////////////////////////////////////////////////////////
 var myLazyLoad = new LazyLoad();
 
 
