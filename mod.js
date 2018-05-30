@@ -156,15 +156,15 @@
 						break;
 					case "signup":
 						app.do.getInfo();
-						var url= new URL(window.location.href);
-						if(url.searchParams.get('full_name')){
-							$('#user_full_name').val(url.searchParams.get('full_name'));
+						 url= new URL(window.location.href);
+						if(url.searchParams.get('ZnVsbF9uYW1l')){
+							$('#user_full_name').val(Base64.decode(url.searchParams.get('ZnVsbF9uYW1l')));
 						}
 						if(url.searchParams.get('email')){
 							$('#user_email').val(url.searchParams.get('email'));
 						}
-						if(url.searchParams.get('phone')){
-							$('#user_phone_number').val('+'+url.searchParams.get('phone').replace(' ',''));
+						if(url.searchParams.get('cGhvbmU')){
+							$('#user_phone_number').val(Base64.decode(url.searchParams.get('cGhvbmU')));
 						}
 						$('.signup-btn').on('click',function(event) {
 							event.preventDefault();
