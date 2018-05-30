@@ -138,11 +138,7 @@ img{max-width:100%;}
         </iframe> -->
          <div class="w-container">
             <div class="signup-page-form relative">
-              <div class="clearfix signup-page-form-content" data-signup-form="true" data-type="json" id="new_user" accept-charset="UTF-8" data-remote="true"><input name="utf8" type="hidden" value="&#x2713;" />
-                <input type="hidden" name="distinct_id" id="distinct_id" />
-                <input type="hidden" name="signup_origin" id="signup_origin" />
-                <input value="contractor" type="hidden" name="user[signup_user_role]" id="user_signup_user_role" />
-
+              <div class="clearfix signup-page-form-content" data-signup-form="true" data-type="json" id="new_user" accept-charset="UTF-8" data-remote="true">
                 <div class="new-form-group">
                 <label class="form-label" for="user_full_name">Full Name</label>
                 <div class="relative">
@@ -153,7 +149,7 @@ img{max-width:100%;}
                 <div class="new-form-group">
                 <label class="form-label" for="user_phone_number">Phone</label>
                 <div class="relative">
-                <input class="form-control" autocomplete="off" placeholder="phone" name="user[email]" id="user_phone_number" />
+                <input class="form-control" type="tel" autocomplete="off" placeholder="phone" name="user[email]" id="user_phone_number" />
                 </div>
                 </div>
             
@@ -487,7 +483,7 @@ img{max-width:100%;}
            }
           })
           .done(function(data) {
-            window.location.href='signup/?cGhvbmU=='+Base64.encode($('#user_phone_number').val())+'&ZnVsbF9uYW1l='+Base64.encode($('#user_full_name').val());
+            window.location.href='signup/?cGhvbmU='+Base64.encode($('#user_phone_number').val())+'&ZnVsbF9uYW1l='+Base64.encode($('#user_full_name').val());
           })
           .fail(function(error) {
            console.log(error.responseText);
