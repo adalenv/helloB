@@ -432,7 +432,7 @@ img{max-width:100%;}
          <div class="footer-div">
              <div class="w-container">
                 <div class="footer-copyright-text" style="text-align: center;">©2018 Platinums Inc. Platinums is not a law firm, does not provide legal services or advice, and <br/>does not provide or participate in legal representation. 
-                  <a href="terms" class="footer-text-link">Legal</a> - <a href="privacy" class="footer-text-link">Privacy Policy</a></div>
+                  <a href="terms" target="_blank" class="footer-text-link">Legal</a> - <a href="privacy" target="_blank"  class="footer-text-link">Privacy Policy</a></div>
              </div>
          </div>
       </div>
@@ -453,7 +453,7 @@ img{max-width:100%;}
   AccountKit_OnInteractive = function(){
     AccountKit.init(
       {
-        appId:"594291707607342", 
+        appId:"780200312177398", 
         state:"test", 
         version:"v1.1",
         fbAppEventsEnabled:true,
@@ -483,7 +483,9 @@ img{max-width:100%;}
            }
           })
           .done(function(data) {
-            window.location.href='signup/?cGhvbmU='+Base64.encode($('#user_phone_number').val())+'&ZnVsbF9uYW1l='+Base64.encode($('#user_full_name').val());
+            window.sessionStorage.setItem('phone',$('#user_phone_number').val());
+            window.sessionStorage.setItem('fullname',$('#user_full_name').val());
+            window.location.href='signup/';
           })
           .fail(function(error) {
            console.log(error.responseText);
@@ -1027,4 +1029,16 @@ giftofspeed2.href = 'css/toastr.min.css';
 giftofspeed2.type = 'text/css';
 var godefer2 = document.getElementsByTagName('link')[0];
 godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+</script>
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b101be410b99c7b36d481fc/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
 </script>

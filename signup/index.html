@@ -1,452 +1,259 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-
-<title>Sign Up</title>
-<meta name="description" content="#name is a freelancer&#39;s best friend: automated proposals, contracts, time tracking, and invoices. Get peace of mind &amp; get on with your work." />
-<meta name="keywords" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<meta property="og:title" content="Sign Up - #name" />
-<meta property="og:image" content="https://app.hellobonsai.com/social-logo-graphic.png" />
-<meta name="google-site-verification" content="pRe6OPD4OpiNIm2pbXfOqdNpN8gZnKpBC6PrVKz-fjg" />
-<meta name="msvalidate.01" content="7D61FB3384CBBEA7FA82BCA577F4C53B" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:site" content="@bonsaiinc">
-<meta name="twitter:creator" content="bonsai">
-<meta name="twitter:image:src" content="https://app.hellobonsai.com/social-logo-graphic.png">
-<link rel="image_src" type="image/png" href="https://app.hellobonsai.com/social-logo-graphic.png">
-<link rel="apple-touch-icon" href="https://app.hellobonsai.com/favicon-256x256.png">
-<link rel="apple-touch-icon" sizes="144x144" href="https://app.hellobonsai.com/favicon-144x144.png">
-<link rel="apple-touch-icon" sizes="256x256" href="https://app.hellobonsai.com/favicon-256x256.png">
-<link rel="apple-touch-startup-image" href="https://app.hellobonsai.com/ios-startup.png">
-<link rel="shortcut icon" href="https://app.hellobonsai.com/favicon.ico" type="image/x-icon">
-<link rel="icon" href="https://app.hellobonsai.com/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" media="all" href="../css/style_all.css" data-turbolinks-track="true" />
-<link rel="stylesheet" media="screen" href="../css/style_print.css" />
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-</head>
-<body class="is-not-mobile" data-agreement-type="">
-<div id="outer-wrapper" class="">
-<div class="signup-page noauth-page" data-controller="SignupController" data-signup-page="true" data-ab-test-variation="">
-<div class="signup-page-content text-center">
-<div class="signup-page-header-content">
-<h1 class="signup-page-header">
-  <img  style="width: 50%" src="../img/logo.svg" alt="Logo icon" />
-<div class="signup-page-subheader">
-10,000+ traders use #name to earn more and get paid faster.
-</div>
-</h1>
-</div>
-<div>
-<div class="signup-page-form relative">
-<form class="clearfix signup-page-form-content" data-signup-form="true" data-type="json" id="new_user" action="https://app.hellobonsai.com/users" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
-
-<div class="new-form-group">
-<label class="form-label" for="user_full_name">Full Name</label>
-<div class="relative">
-<input class="form-control" autocomplete="off"  placeholder="Jane Smith" type="text" name="user[full_name]" id="user_full_name" />
-</div>
-</div>
-
-<div class="new-form-group">
-<label class="form-label" for="user_email">Email</label>
-<div class="relative">
-<input class="form-control" autocomplete="off" placeholder="you@email.com" type="email" name="user[email]" id="user_email" />
-</div>
-</div>
-
-
-<div class="new-form-group">
-<label class="form-label" for="user_phone_number">Phone Number</label>
-<div class="relative" >
-<input class="form-control" autocomplete="off" placeholder="" type="tel" name="user[phone_number]" id="user_phone_number" />
-</div>
-</div>
-
-<div class="new-form-group">
-<label class="form-label" for="user_password">Password</label>
-<input autocomplete="off"  class="form-control" placeholder="Password" type="password" name="user[password]" id="user_password" />
-</div>
-
-<div class="new-form-group alert-inline alert-warning" style="display: none;" data-existing-account-notice>
-There's already a contract, payment or onboarding associated with your email, so we're going to send you a link to set your new password.
-</div>
-
-<div class="form-group">
-<input type="submit" name="commit" value="Get started now" class="signup-btn btn btn-md btn-primary btn-block" data-disable-with="Get started now" />
-</div>
-</form>
-<div class="signup-form-loading" data-loading>
-<div class="signup-form-loading-content">
-<svg class="signup-form-svg" width="52px" height="88px" viewBox="0 0 52 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-<g id="noun_1114766" stroke="#00B289" fill-rule="nonzero">
-<path d="M7,48.9 C3.6,48.9 0.9,51.7 0.9,55 C0.9,57.7 2.6,59.9 5,60.8 L9.3,80.1 C10.2,84.2 13.8,87.1 18.1,87.1 L34,87.1 C38.2,87.1 41.9,84.2 42.8,80.1 L47.1,60.8 C49.5,60 51.2,57.7 51.2,55 C51.2,51.6 48.5,48.9 45.1,48.9 L27,48.9 L27,22.9 L27.7,22.9 C38,22.6 46.7,13.9 47,3.5 L47,1.9 C47,1.6 46.9,1.4 46.7,1.2 C46.5,1 46.2,0.9 46,0.9 L44.4,0.9 C34,1.2 25.3,9.9 25,20.3 L25,21.9 C25,21.9 25,21.9 25,21.9 L25,21.9 L25,27.2 C22,21 15.7,16.6 8.5,16.4 L5.9,16.3 C5.6,16.3 5.4,16.4 5.2,16.6 C5,16.8 4.9,17.1 4.9,17.3 L5,19.9 C5.3,29.8 13.6,38 23.4,38.3 L25,38.3 L25,48.8 L7,48.8 L7,48.9 Z M23.5,36.3 C14.7,36 7.3,28.6 7,19.8 L7,18.3 L8.5,18.3 C17.3,18.6 24.7,26 25,34.8 L25,36.3 L23.5,36.3 Z M27,20.3 C27.3,11 35.2,3.2 44.5,2.9 L45.1,2.9 L45.1,3.5 C44.8,12.8 37,20.7 27.7,20.9 L27.1,20.9 L27,20.3 Z M40.8,79.7 C40.1,82.9 37.3,85.2 34,85.2 L18.1,85.2 C14.8,85.2 12,83 11.3,79.7 L7.1,61.2 L45,61.2 L40.8,79.7 Z M49.2,55 C49.2,57.3 47.3,59.1 45.1,59.1 L7,59.1 C4.7,59.1 2.9,57.2 2.9,55 C2.9,52.7 4.8,50.9 7,50.9 L45,50.9 C47.3,50.9 49.2,52.8 49.2,55 Z" id="Shape"></path>
-</g>
-</g>
-</svg>
-<div class="signup-form-loading-text">
-Hold tight!
-<div class="mtxs">
-Your bonsai is being planted...
-</div>
-</div>
-</div>
-</div>
-</form> <div class="">
-<div class="devise-links">
-<p class="devise-links-log-in">
-Already have an account? <a href="../signin">Log in</a>
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<footer class="footer">
-<div class="wrapper">
-<div class="row">
-<div class="">
-<div class="footer-links list-unstyled clearfix">
-<a class="footer-link" href="http://intercom.help/bonsai/" target="_blank">
-Support
-</a>
-<span class="ion-record footer-dot"></span>
-<a class="footer-link" target="_blank" href="mailto:support@hellobonsai.com">Contact</a>
-<span class="ion-record footer-dot"></span>
-<a class="footer-link" href='https://www.hellobonsai.com/about' target='_blank'>
-About Us
-</a>
-</div>
-</div>
-</div>
-<div class="footer-legal-policies">
-<div class="row">
-<div class="col-sm-8 col-sm-push-2">
-<div class="footer-disclaimer">
-©2018 #name Inc. #name is not a law firm, does not provide legal services or advice, and does not provide or participate in legal representation.&nbsp;&nbsp;
-<a href='https://www.hellobonsai.com/terms' target='_blank'>Terms</a>
-<span class="footer-terms-separator ion-ios-minus-empty"></span>
-<a href='https://www.hellobonsai.com/credits' target='_blank'>Credits</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</footer>
-</div>
-<div class="modal fade" id="share-the-love" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-<a href="javascript:void(0)" class="modal-header-close" type="button" data-dismiss="modal" aria-label="Close">
-<span class="ion-ios-close-outline"></span>
-</a>
-<h4 class="modal-title" id="myModalLabel">Give 1 Month, Get 1 Month Free</h4>
-</div>
-<div class="modal-body modal-share-body">
-<div class="modal-share-body-copy">
-<p>
-Refer your friends to #name and get<br><span class="highlight">1 free month for each of them</span> who joins any plan.
-</p>
-<p> They'll also get their first month free! </p>
-</div>
-<br>
-<div class="relative">
-<label class="modal-send-link-copy-note" for="modal-send-link-copy-input">
-Share This Link <span class="ion-arrow-right-b modal-send-link-copy-note-icon"></span>
-</label>
-<input type="text" class="form-control input-lg input-copier" id="modal-send-link-copy-input" value="https://app.hellobonsai.com/invite" readonly data-select-on-click />
-</div>
-<div class="modal-share-subtext">
-<p>
-or share via
-</p>
-</div>
-<div class="modal-share-links">
-
-<ul class="share-buttons">
-<li>
-<a class="modal-share-link-icon" href="mailto:?subject=Check%20out%20#name!&body=#name%20is%20a%20freelancer%E2%80%99s%20best%20friend%3A%20automated%20proposals%2C%20contracts%2C%20time%20tracking%2C%20and%20invoices%0A%0Ahttps://app.hellobonsai.com/invite" target="_blank" title="Email"><i class="ion-ios-email-outline"></i></a>
-</li>
-<li>
-<a class="modal-share-link-icon" href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.hellobonsai.com&text=#name%20is%20a%20freelancer%E2%80%99s%20best%20friend%3A%20automated%20proposals%2C%20contracts%2C%20time%20tracking%2C%20and%20invoices%20https://app.hellobonsai.com/invite&via=bonsaiinc" target="_blank" title="Tweet"><i class="ion-social-twitter-outline"></i></a>
-</li>
-<li>
-<a class="modal-share-link-icon" href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.hellobonsai.com&title=Check%20out%20#name!&summary=#name%20is%20a%20freelancer%E2%80%99s%20best%20friend%3A%20automated%20proposals%2C%20contracts%2C%20time%20tracking%2C%20and%20invoices&source=https://app.hellobonsai.com/invite" target="_blank" title="Share on LinkedIn"><i class="ion-social-linkedin-outline"></i></a>
-</li>
-<li>
-<a class="modal-share-link-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://app.hellobonsai.com/invite" target="_blank" title="Share on Facebook"><i class="ion-social-facebook-outline"></i></a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="modal-support" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-sm">
-<div class="modal-content">
-<div class="modal-body paxl">
-<a href="javascript:void(0)" class="modal-header-close" type="button" data-dismiss="modal" aria-label="Close">
-<span class="ion-ios-close-outline"></span>
-</a>
-<div class="modal-support-copy">
-You can find our FAQ in our knowledge base:
-</div>
-<div class="mtl">
-<a href="http://intercom.help/bonsai/" class="btn btn-default btn-block" target="_blank">Go to Knowledge Base</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal fade" id="modal-payment-security" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-md">
-<div class="modal-content">
-<div class="modal-header">
-<a href="javascript:void(0)" class="modal-header-close" type="button" data-dismiss="modal" aria-label="Close">
-<span class="ion-ios-close-outline"></span>
-</a>
-<h4 class="modal-title">
-Payment Security
-</h4>
-</div>
-<div class="modal-body paxl">
-<div class="modal-payment-security-headline">
-<h4>
-Your transactions are secured with<br>industry-leading payment standards and partners.
-</h4>
-</div>
-<div class="modal-payment-security-item">
-<h4>Credit Cards</h4>
-<p class="modal-payment-security-item-details">
-We use Stripe, an industry-leading payment processor, for secure credit card transactions over SSL. Stripe has been certified as a PCI Level 1 Service Provider, the most stringent level of certification available. Stripe is also a participant in the <a href="https://www.pcisecuritystandards.org/" target="_blank">PCI Security Standards Council</a>.
-</p>
-<div class="modal-payment-security-item-more">
-<a href="https://stripe.com/help/security" target="_blank">ABOUT STRIPE<span class="ion-chevron-right modal-payment-security-item-more-icon"></span></a>
-</div>
-</div>
-<div class="modal-payment-security-item">
-<h4>Bank Transfers</h4>
-<p class="modal-payment-security-item-details">
-We also use Stripe to securely process bank transfers (ACH). If you are using your bank login to add a bank account, the most sensitive data is heavily encrypted and stored with Plaid, which integrates with Stripe specifically for this. Their data is encrypted with 2048-bit RSA and decryption is only possible using dedicated machines on their private network.
-</p>
-<p class="modal-payment-security-item-details">
-If you are using your account number and micro-deposits to add your bank account, then your bank account is verified with Stripe. As noted above, Stripe has been certified as a PCI Level 1 Service Provider.
-</p>
-<div class="modal-payment-security-item-more">
-<a href="https://plaid.com/security/" target="_blank">ABOUT PLAID<span class="ion-chevron-right modal-payment-security-item-more-icon"></span></a>
-</div>
-</div>
-<div class="modal-payment-security-item">
-<h4>Bitcoin</h4>
-<p class="modal-payment-security-item-details">
-We've partnered with Coinbase to securely transact bitcoins. 98% of Coinbase funds are stored offline and sensitive data normally stored on servers are disconnected entirely from the internet. Drives and paper backups are distributed geographically in safe deposit boxes and vaults around the world.
-</p>
-<div class="modal-payment-security-item-more">
-<a href="https://www.coinbase.com/security?locale=en" target="_blank">ABOUT COINBASE<span class="ion-chevron-right modal-payment-security-item-more-icon"></span></a>
-</div>
-</div>
-<div class="modal-payment-security-item">
-<p class="modal-payment-security-customer-support">
-If you have additional questions, please feel free to <a class="chat-with-us-link" data-toggle="modal" data-dismiss="modal" aria-hidden="true" href="sign_up.html#modal-support">contact support</a>.
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="modal-about-payment-fees" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-sm">
-<div class="modal-content">
-<div class="modal-header">
-<a href="javascript:void(0)" class="modal-header-close" type="button" data-dismiss="modal" aria-label="Close">
-<span class="ion-ios-close-outline"></span>
-</a>
-<h4 class="modal-title">
-Processing Fees
-</h4>
-</div>
-<div class="modal-body paxl">
-<div class="modal-about-payment-fees-item">
-<h4>Credit Card</h4>
-<p class="modal-payment-security-item-details">
-2.9% fee.
-</p>
-</div>
-<div class="modal-about-payment-fees-item">
-<h4>Bank Transfer (ACH)</h4>
-<p class="modal-payment-security-item-details">
-$5 per transaction. $50,000 limit.
-</p>
-</div>
-<div class="modal-about-payment-fees-item">
-<h4>PayPal</h4>
-<p class="modal-payment-security-item-details">
-Fees vary by country. <a target="_blank" href="https://www.paypal.com/webapps/mpp/paypal-fees">Learn more</a>
-</p>
-</div>
-<div class="modal-about-payment-fees-item">
-<h4>Bitcoin</h4>
-<p class="modal-payment-security-item-details">
-Free to transfer. 1% to exchange currency.
-</p>
-</div>
-<div class="modal-payment-security-item">
-<p class="modal-payment-security-customer-support">
-#name uses <a href="https://www.stripe.com" target="_blank">Stripe</a>, <a href="https://www.paypal.com" target="_blank">PayPal</a> and <a href="https://www.coinbase.com" target="_blank">Coinbase</a> to provide fast, secure, and low cost payment options.
-</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-</script>
-</body>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Sign Up</title>
+      <meta name="description" content="Platinums is a freelancer&#39;s best friend: automated proposals, contracts, time tracking, and invoices. Get peace of mind &amp; get on with your work." />
+      <meta name="keywords" content="" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <meta property="og:title" content="Sign Up - Platinums" />
+      <meta property="og:image" content="https://app.hellobonsai.com/social-logo-graphic.png" />
+      <meta name="google-site-verification" content="pRe6OPD4OpiNIm2pbXfOqdNpN8gZnKpBC6PrVKz-fjg" />
+      <meta name="msvalidate.01" content="7D61FB3384CBBEA7FA82BCA577F4C53B" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta name="twitter:site" content="@bonsaiinc">
+      <meta name="twitter:creator" content="bonsai">
+      <meta name="twitter:image:src" content="https://app.hellobonsai.com/social-logo-graphic.png">
+      <link rel="image_src" type="image/png" href="https://app.hellobonsai.com/social-logo-graphic.png">
+      <link rel="apple-touch-icon" href="https://app.hellobonsai.com/favicon-256x256.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="https://app.hellobonsai.com/favicon-144x144.png">
+      <link rel="apple-touch-icon" sizes="256x256" href="https://app.hellobonsai.com/favicon-256x256.png">
+      <link rel="apple-touch-startup-image" href="https://app.hellobonsai.com/ios-startup.png">
+      <link rel="shortcut icon" href="https://app.hellobonsai.com/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="https://app.hellobonsai.com/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" media="all" href="../css/style_all.css" data-turbolinks-track="true" />
+      <link rel="stylesheet" media="screen" href="../css/style_print.css" />
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+   </head>
+   <body class="is-not-mobile" data-agreement-type="">
+      <div id="outer-wrapper" class="" style="padding-top: 0px">
+         <div class="signup-page noauth-page" data-controller="SignupController" data-signup-page="true" data-ab-test-variation="">
+            <div class="signup-page-content text-center">
+               <div class="signup-page-header-content">
+                  <h1 class="signup-page-header">
+                     <img  style="width: 50%" src="../img/logo.svg" alt="Logo icon" />
+                     <div class="signup-page-subheader">
+                        10,000+ traders use Platinums to earn more and get paid faster.
+                     </div>
+                  </h1>
+               </div>
+               <div>
+                  <div class="signup-page-form relative">
+                     <form class="clearfix signup-page-form-content" data-signup-form="true" data-type="json" id="new_user" action="https://app.hellobonsai.com/users" accept-charset="UTF-8" data-remote="true" method="post">
+                        <input name="utf8" type="hidden" value="&#x2713;" />
+                        <div class="new-form-group">
+                           <label class="form-label" for="user_full_name">Full Name</label>
+                           <div class="relative">
+                              <input class="form-control" autocomplete="off"  placeholder="Jane Smith" type="text" name="user[full_name]" id="user_full_name" />
+                           </div>
+                        </div>
+                        <div class="new-form-group">
+                           <label class="form-label" for="user_email">Email</label>
+                           <div class="relative">
+                              <input class="form-control" autocomplete="off" placeholder="you@email.com" type="email" name="user[email]" id="user_email" />
+                           </div>
+                        </div>
+                        <div class="new-form-group">
+                           <label class="form-label" for="user_phone_number">Phone Number</label>
+                           <div class="relative" >
+                              <input class="form-control" autocomplete="off" placeholder="" type="tel" name="user[phone_number]" id="user_phone_number" />
+                           </div>
+                        </div>
+                        <div class="new-form-group">
+                           <label class="form-label" for="user_password">Password</label>
+                           <input autocomplete="off"  class="form-control" placeholder="Password" type="password" name="user[password]" id="user_password" />
+                        </div>
+                        <div class="new-form-group alert-inline alert-warning" style="display: none;" data-existing-account-notice>
+                           There's already a contract, payment or onboarding associated with your email, so we're going to send you a link to set your new password.
+                        </div>
+                        <div class="form-group">
+                           <input type="submit" name="commit" value="Get started now" class="signup-btn btn btn-md btn-primary btn-block" data-disable-with="Get started now" />
+                        </div>
+                     </form>
+                     <div class="signup-form-loading" data-loading>
+                        <div class="signup-form-loading-content">
+                           <svg class="signup-form-svg" width="52px" height="88px" viewBox="0 0 52 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                 <g id="noun_1114766" stroke="#00B289" fill-rule="nonzero">
+                                    <path d="M7,48.9 C3.6,48.9 0.9,51.7 0.9,55 C0.9,57.7 2.6,59.9 5,60.8 L9.3,80.1 C10.2,84.2 13.8,87.1 18.1,87.1 L34,87.1 C38.2,87.1 41.9,84.2 42.8,80.1 L47.1,60.8 C49.5,60 51.2,57.7 51.2,55 C51.2,51.6 48.5,48.9 45.1,48.9 L27,48.9 L27,22.9 L27.7,22.9 C38,22.6 46.7,13.9 47,3.5 L47,1.9 C47,1.6 46.9,1.4 46.7,1.2 C46.5,1 46.2,0.9 46,0.9 L44.4,0.9 C34,1.2 25.3,9.9 25,20.3 L25,21.9 C25,21.9 25,21.9 25,21.9 L25,21.9 L25,27.2 C22,21 15.7,16.6 8.5,16.4 L5.9,16.3 C5.6,16.3 5.4,16.4 5.2,16.6 C5,16.8 4.9,17.1 4.9,17.3 L5,19.9 C5.3,29.8 13.6,38 23.4,38.3 L25,38.3 L25,48.8 L7,48.8 L7,48.9 Z M23.5,36.3 C14.7,36 7.3,28.6 7,19.8 L7,18.3 L8.5,18.3 C17.3,18.6 24.7,26 25,34.8 L25,36.3 L23.5,36.3 Z M27,20.3 C27.3,11 35.2,3.2 44.5,2.9 L45.1,2.9 L45.1,3.5 C44.8,12.8 37,20.7 27.7,20.9 L27.1,20.9 L27,20.3 Z M40.8,79.7 C40.1,82.9 37.3,85.2 34,85.2 L18.1,85.2 C14.8,85.2 12,83 11.3,79.7 L7.1,61.2 L45,61.2 L40.8,79.7 Z M49.2,55 C49.2,57.3 47.3,59.1 45.1,59.1 L7,59.1 C4.7,59.1 2.9,57.2 2.9,55 C2.9,52.7 4.8,50.9 7,50.9 L45,50.9 C47.3,50.9 49.2,52.8 49.2,55 Z" id="Shape"></path>
+                                 </g>
+                              </g>
+                           </svg>
+                           <div class="signup-form-loading-text">
+                              Hold tight!
+                              <div class="mtxs">
+                                 Your bonsai is being planted...
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     </form> 
+                     <div class="">
+                        <div class="devise-links">
+                           <p class="devise-links-log-in">
+                              Already have an account? <a href="../signin">Log in</a>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <footer class="footer" style="padding: 0px">
+            <div class="wrapper">
+               <div class="footer-legal-policies">
+                  <div class="row">
+                     <div class="col-sm-8 col-sm-push-2">
+                        <div class="footer-disclaimer">
+                           ©2018 Platinums Inc. Platinums is not a law firm, does not provide legal services or advice, and does not provide or participate in legal representation.&nbsp;&nbsp;
+                           <a href='../terms' target='_blank'>Terms</a>
+                           <span class="footer-terms-separator">-</span>
+                           <a href='../privacy' target='_blank'>Privacy Policy</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
 </html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <script type="text/javascript">
-	var Base64 = {
-// private property
-_keyStr : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
-
-// public method for encoding
-encode : function (input) {
-    var output = "";
-    var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
-    var i = 0;
-
-    input = Base64._utf8_encode(input);
-
-    while (i < input.length) {
-
-        chr1 = input.charCodeAt(i++);
-        chr2 = input.charCodeAt(i++);
-        chr3 = input.charCodeAt(i++);
-
-        enc1 = chr1 >> 2;
-        enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
-        enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
-        enc4 = chr3 & 63;
-
-        if (isNaN(chr2)) {
-            enc3 = enc4 = 64;
-        } else if (isNaN(chr3)) {
-            enc4 = 64;
-        }
-
-        output = output +
-        Base64._keyStr.charAt(enc1) + Base64._keyStr.charAt(enc2) +
-        Base64._keyStr.charAt(enc3) + Base64._keyStr.charAt(enc4);
-
-    }
-
-    return output;
-},
-
-// public method for decoding
-decode : function (input) {
-    var output = "";
-    var chr1, chr2, chr3;
-    var enc1, enc2, enc3, enc4;
-    var i = 0;
-
-    input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-
-    while (i < input.length) {
-
-        enc1 = Base64._keyStr.indexOf(input.charAt(i++));
-        enc2 = Base64._keyStr.indexOf(input.charAt(i++));
-        enc3 = Base64._keyStr.indexOf(input.charAt(i++));
-        enc4 = Base64._keyStr.indexOf(input.charAt(i++));
-
-        chr1 = (enc1 << 2) | (enc2 >> 4);
-        chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
-        chr3 = ((enc3 & 3) << 6) | enc4;
-
-        output = output + String.fromCharCode(chr1);
-
-        if (enc3 != 64) {
-            output = output + String.fromCharCode(chr2);
-        }
-        if (enc4 != 64) {
-            output = output + String.fromCharCode(chr3);
-        }
-
-    }
-
-    output = Base64._utf8_decode(output);
-
-    return output;
-
-},
-
-// private method for UTF-8 encoding
-_utf8_encode : function (string) {
-    string = string.replace(/\r\n/g,"\n");
-    var utftext = "";
-
-    for (var n = 0; n < string.length; n++) {
-
-        var c = string.charCodeAt(n);
-
-        if (c < 128) {
-            utftext += String.fromCharCode(c);
-        }
-        else if((c > 127) && (c < 2048)) {
-            utftext += String.fromCharCode((c >> 6) | 192);
-            utftext += String.fromCharCode((c & 63) | 128);
-        }
-        else {
-            utftext += String.fromCharCode((c >> 12) | 224);
-            utftext += String.fromCharCode(((c >> 6) & 63) | 128);
-            utftext += String.fromCharCode((c & 63) | 128);
-        }
-
-    }
-
-    return utftext;
-},
-
-// private method for UTF-8 decoding
-_utf8_decode : function (utftext) {
-    var string = "";
-    var i = 0;
-    var c = c1 = c2 = 0;
-
-    while ( i < utftext.length ) {
-
-        c = utftext.charCodeAt(i);
-
-        if (c < 128) {
-            string += String.fromCharCode(c);
-            i++;
-        }
-        else if((c > 191) && (c < 224)) {
-            c2 = utftext.charCodeAt(i+1);
-            string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
-            i += 2;
-        }
-        else {
-            c2 = utftext.charCodeAt(i+1);
-            c3 = utftext.charCodeAt(i+2);
-            string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
-            i += 3;
-        }
-
-    }
-    return string;
-}
-}
+   var Base64 = {
+   // private property
+   _keyStr : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+   
+   // public method for encoding
+   encode : function (input) {
+      var output = "";
+      var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+      var i = 0;
+   
+      input = Base64._utf8_encode(input);
+   
+      while (i < input.length) {
+   
+          chr1 = input.charCodeAt(i++);
+          chr2 = input.charCodeAt(i++);
+          chr3 = input.charCodeAt(i++);
+   
+          enc1 = chr1 >> 2;
+          enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+          enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+          enc4 = chr3 & 63;
+   
+          if (isNaN(chr2)) {
+              enc3 = enc4 = 64;
+          } else if (isNaN(chr3)) {
+              enc4 = 64;
+          }
+   
+          output = output +
+          Base64._keyStr.charAt(enc1) + Base64._keyStr.charAt(enc2) +
+          Base64._keyStr.charAt(enc3) + Base64._keyStr.charAt(enc4);
+   
+      }
+   
+      return output;
+   },
+   
+   // public method for decoding
+   decode : function (input) {
+      var output = "";
+      var chr1, chr2, chr3;
+      var enc1, enc2, enc3, enc4;
+      var i = 0;
+   
+      input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+   
+      while (i < input.length) {
+   
+          enc1 = Base64._keyStr.indexOf(input.charAt(i++));
+          enc2 = Base64._keyStr.indexOf(input.charAt(i++));
+          enc3 = Base64._keyStr.indexOf(input.charAt(i++));
+          enc4 = Base64._keyStr.indexOf(input.charAt(i++));
+   
+          chr1 = (enc1 << 2) | (enc2 >> 4);
+          chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+          chr3 = ((enc3 & 3) << 6) | enc4;
+   
+          output = output + String.fromCharCode(chr1);
+   
+          if (enc3 != 64) {
+              output = output + String.fromCharCode(chr2);
+          }
+          if (enc4 != 64) {
+              output = output + String.fromCharCode(chr3);
+          }
+   
+      }
+   
+      output = Base64._utf8_decode(output);
+   
+      return output;
+   
+   },
+   
+   // private method for UTF-8 encoding
+   _utf8_encode : function (string) {
+      string = string.replace(/\r\n/g,"\n");
+      var utftext = "";
+   
+      for (var n = 0; n < string.length; n++) {
+   
+          var c = string.charCodeAt(n);
+   
+          if (c < 128) {
+              utftext += String.fromCharCode(c);
+          }
+          else if((c > 127) && (c < 2048)) {
+              utftext += String.fromCharCode((c >> 6) | 192);
+              utftext += String.fromCharCode((c & 63) | 128);
+          }
+          else {
+              utftext += String.fromCharCode((c >> 12) | 224);
+              utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+              utftext += String.fromCharCode((c & 63) | 128);
+          }
+   
+      }
+   
+      return utftext;
+   },
+   
+   // private method for UTF-8 decoding
+   _utf8_decode : function (utftext) {
+      var string = "";
+      var i = 0;
+      var c = c1 = c2 = 0;
+   
+      while ( i < utftext.length ) {
+   
+          c = utftext.charCodeAt(i);
+   
+          if (c < 128) {
+              string += String.fromCharCode(c);
+              i++;
+          }
+          else if((c > 191) && (c < 224)) {
+              c2 = utftext.charCodeAt(i+1);
+              string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+              i += 2;
+          }
+          else {
+              c2 = utftext.charCodeAt(i+1);
+              c3 = utftext.charCodeAt(i+2);
+              string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+              i += 3;
+          }
+   
+      }
+      return string;
+   }
+   }
 </script>
 <script type="text/javascript" src="../mod.js"></script>

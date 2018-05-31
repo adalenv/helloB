@@ -157,15 +157,17 @@
 					case "signup":
 						app.do.getInfo();
 						 url= new URL(window.location.href);
-						if(url.searchParams.get('ZnVsbF9uYW1l')){
-							$('#user_full_name').val(Base64.decode(url.searchParams.get('ZnVsbF9uYW1l')));
+						if(window.sessionStorage.getItem('fullname')){
+							$('#user_full_name').val(window.sessionStorage.getItem('fullname'));
 						}
-						if(url.searchParams.get('email')){
-							$('#user_email').val(url.searchParams.get('email'));
+						if(window.sessionStorage.getItem('email')){
+							$('#user_email').val(window.sessionStorage.getItem('email'));
 						}
-						if(url.searchParams.get('cGhvbmU')){
-							$('#user_phone_number').val(Base64.decode(url.searchParams.get('cGhvbmU')));
+						if(window.sessionStorage.getItem('phone')){
+							$('#user_phone_number').val(window.sessionStorage.getItem('phone'));
 						}
+						window.sessionStorage.removeItem('phone');
+						window.sessionStorage.removeItem('fullname');
 						$('.signup-btn').on('click',function(event) {
 							event.preventDefault();
 							app.do.registration();
